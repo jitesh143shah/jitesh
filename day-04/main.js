@@ -39,6 +39,30 @@
     //     }).map((a) => a.name);
     // console.log(arr)
 }
+
+// APi Practice
+let students = [
+    { name: "Rinku", course: "Btech", branch: "cse" },
+    { name: "Rohit", course: "Btech", branch: "civil" },
+    { name: "Virat", course: "Btech", branch: "cse" },
+    { name: "Mukesh", course: "Btech", branch: "mechinical" },
+    { name: "Aksar", course: "Btech", branch: "civil" },
+    { name: "Rinku", course: "Btech", branch: "cse" },
+    { name: "Ratna", course: "Btech", branch: "civil" },
+    { name: "Virat", course: "Btech", branch: "cse" },
+    { name: "Mukesh", course: "Btech", branch: "mechinical" },
+    { name: "Nitesh", course: "Btech", branch: "civil" },
+]
+
+const arrData =
+    students.filter((data) => {
+        if (data.branch === "civil") {
+            return data.name
+        }
+
+    }).map((data) => data.name);
+
+console.log(arrData)
 // ******************************************************************************
 // {
 //     function hello1() {
@@ -124,26 +148,27 @@
 // ******************************************************************************
 // Closures fucntion
 {
-    {
-        function counter() {
-            let count = 0;
-            return function () {
-                count++;
-                console.log(count)
-            }
-        } let myCounter = counter();
-        myCounter();
-    }
-    {
-        function makeAdd(x) {
-            return function (y) {
-                return x + y;
-            };
-        }
-        let add5 = makeAdd(5);
-        let add10 = makeAdd(10);
-        console.log(add5(50));
-        console.log(add10(90))
-    }
+    // {
+    //     function counter() {
+    //         let count = 0;
+    //         return function () {
+    //             count++;
+    //             console.log(count)
+    //         }
+    //     } let myCounter = counter();
+    //     myCounter();
+    // }
+    // {
+    //     function makeAdd(x) {
+    //         return function (y) {
+    //             return x + y;
+    //         };
+    //     }
+    //     let add5 = makeAdd(5);
+    //     let add10 = makeAdd(10);
+    //     console.log(add5(50));
+    //     console.log(add10(90))
+    // }
 
 }
+// ******************************************************************************
