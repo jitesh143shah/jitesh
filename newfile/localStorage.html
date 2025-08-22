@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage Practice</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="name">Name</label>
+      <input type="text " id="name" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" required />
+      <br />
+      <button id="submit">Submit</button>
+      <button id="reset">Reset</button>
+    </form>
+    <script>
+      function setCookie(cname, cpass, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+        let expires = "expires =" + d.toUTCString();
+        // document.cookie = cname + "=" + cpass + ";" + expires + ";path=/";
+
+        document.cookie = `${cname}=${cpass};${expires};path=/`;
+        // document.cookie = cname + "=" + cpass + ";" + expires + ";path=/";
+      }
+      const submit = document.getElementById("submit");
+      submit.addEventListener("click", (e) => {
+        let name = document.getElementById("name").value;
+        let password = document.getElementById("password").value;
+        e.preventDefault();
+        console.log("Your name is " + name + " and Password is " + password);
+        //   // localStorage.setItem(
+        //   //   "localdata",
+        //   //   JSON.stringify({
+        //   //     name: name,
+        //   //     password: password,
+        //   //   }));
+        //   // sessionStorage.setItem(
+        //   //   "sessiondata",
+        //   //   JSON.stringify({
+        //   //     name: name,
+        //   //     password: password,
+        //   //   })
+        // );
+
+        setCookie(
+          "cookiedata",
+          JSON.stringify({
+            name: name,
+            password: password,
+          }),
+          7
+        );
+      });
+    </script>
+  </body>
+</html>

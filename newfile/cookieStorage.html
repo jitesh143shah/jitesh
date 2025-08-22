@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storing Processing of Cookie</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" id="name" />
+      <input type="number" id="password" />
+      <div class="btn">
+        <button id="submit">Submit</button>
+        <button id="reset">Reset</button>
+      </div>
+    </form>
+    <script>
+      function setCookie(cname, cpasss, exdays) {
+        let d = new Date();
+        d.setTime(d.getDate() + exdays * 24 * 60 * 60 * 1000);
+        let expires = "expires=" + d.toUTCString();j
+        console.log(cname, cpasss, expires);
+        document.cookie = cname += "=" + cpasss + ";" + expires + ";path=/";
+        // document.cookie = cname + "=" + cpasss + ";" + expires + ";path=/";
+        // // document.cookie = cname + "=" + cpassword + ";" + expires + ";path=/";
+        // // document.cookie = cname + "=" + cpass + ";" + expires + ";path=/";
+      }
+      document.getElementById("submit").addEventListener("click", (e) => {
+        e.preventDefault();
+        let name = document.getElementById("name").value;
+        let password = document.getElementById("password").value;
+        console.log(`Your name is ${name} and password is ${password} `);
+        setCookie(
+          "newCookie",
+          JSON.stringify({
+            name: name,
+            password: password,
+          }),
+          5
+        );
+      });
+    </script>
+  </body>
+</html>
