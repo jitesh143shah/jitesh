@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie Storage</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" id="name" placeholder="enter your name here" />
+      <input
+        type="text"
+        id="rollNo"
+        placeholder="Enter your Roll Number here"
+      />
+      <button id="btn">Add</button>
+    </form>
+    <script>
+      function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+        let expires = "expires = " + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+      const btn = document.getElementById("btn");
+      btn.addEventListener("click", function abc(e) {
+        const name = document.getElementById("name").value;
+        const rollNo = document.getElementById("rollNo").value;
+        e.preventDefault();
+        console.log(name, rollNo);
+
+        setCookie(
+          "student",
+          JSON.stringify({
+            name: name,
+            rollNo: rollNo,
+          }),
+          7
+        );
+      });
+    </script>
+  </body>
+</html>
