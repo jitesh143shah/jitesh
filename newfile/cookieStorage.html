@@ -3,35 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Storing Processing of Cookie</title>
+    <title>Cookie storage checking</title>
   </head>
   <body>
     <form action="">
       <input type="text" id="name" />
-      <input type="number" id="password" />
-      <div class="btn">
-        <button id="submit">Submit</button>
-        <button id="reset">Reset</button>
-      </div>
+      <input type="password" id="password" />
+      <button id="submitBtn">Submit</button>
     </form>
     <script>
-      function setCookie(cname, cpasss, exdays) {
-        let d = new Date();
-        d.setTime(d.getDate() + exdays * 24 * 60 * 60 * 1000);
-        let expires = "expires=" + d.toUTCString();j
-        console.log(cname, cpasss, expires);
-        document.cookie = cname += "=" + cpasss + ";" + expires + ";path=/";
-        // document.cookie = cname + "=" + cpasss + ";" + expires + ";path=/";
-        // // document.cookie = cname + "=" + cpassword + ";" + expires + ";path=/";
-        // // document.cookie = cname + "=" + cpass + ";" + expires + ";path=/";
-      }
-      document.getElementById("submit").addEventListener("click", (e) => {
+      function setCookie(cname, cpassword, exdays) {}
+      const submitBtn = document.getElementById("submitBtn");
+      submitBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        let name = document.getElementById("name").value;
-        let password = document.getElementById("password").value;
-        console.log(`Your name is ${name} and password is ${password} `);
+        const name = document.getElementById("name").value;
+        const password = document.getElementById("password").value;
+        console.log(`Your name is: ${name} and your password is: ${password}.`);
+        // sessionStorage.setItem(
         setCookie(
-          "newCookie",
+          "oneMoreTime",
           JSON.stringify({
             name: name,
             password: password,
