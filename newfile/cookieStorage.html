@@ -12,7 +12,14 @@
       <button id="submitBtn">Submit</button>
     </form>
     <script>
-      function setCookie(cname, cpassword, exdays) {}
+      function setCookie(cname, cpassword, exdays) {
+        let d = new Date();
+        // let d = { d: new Date(), hour: new Date().getHours() };
+        d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+        const expires = `Expires = ${d.toUTCString()}`;
+        console.log(expires);
+        document.cookie = `${cname}=${cpassword};${expires};path=/`;
+      }
       const submitBtn = document.getElementById("submitBtn");
       submitBtn.addEventListener("click", (e) => {
         e.preventDefault();
