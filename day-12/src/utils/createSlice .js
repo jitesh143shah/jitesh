@@ -21,7 +21,9 @@ const counterSlice = createSlice({
         },
         reset: (state, action) => {
             state.value = state.value * 0;
+            console.log(action.payload)
         },
+
 
     },
 });
