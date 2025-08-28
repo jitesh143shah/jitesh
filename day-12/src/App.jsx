@@ -9,6 +9,7 @@ import FormSubmit from "./hook/FormSubmit";
 import UseEffect from "./hook/UseEffect";
 import ClassCom from "./component/ClassCom";
 import PageNotFound from "./component/PageNotFound";
+import Redux from "./component/Redux";
 // import Usestate from "./hook/Usestate";
 
 function App() {
@@ -19,13 +20,14 @@ function App() {
       {/* <UseEffect /> */}
       {/* <ProductData /> */}
       <Routes>
-        <Route path="/" element={<Home />}>
-          <Route path="/about" element={<About />} />
+        {/* <Route path="/" element={<Home />}> */}
+          {/* <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/function" element={<FunctionCom />} />
-          <Route path="/class" element={<ClassCom />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Route>
+          <Route path="/class" element={<ClassCom name="clouds" />} />
+          <Route path="*" element={<PageNotFound />} /> */}
+          <Route path="/" element={<Redux />} />
+        {/* </Route> */}
       </Routes>
     </>
   );

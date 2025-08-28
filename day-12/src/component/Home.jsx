@@ -20,16 +20,16 @@ function Home() {
             <Link to={"/function"}>
               <h2>Function Component</h2>
             </Link>
-            <Link to={"/class component"}>
+            <Link to={"/class"}>
               <h2>Class Component</h2>
             </Link>
             <Link to={"/contact"}>
               <h2>Contact</h2>
             </Link>
-            <Link to={"/functionCom"}>
+            <Link to={"/function"}>
               <h2>FunctionCom</h2>
             </Link>
-            <Link to={"/classCom"}>
+            <Link to={"/class"}>
               <h2>ClassCom</h2>
             </Link>
           </div>
