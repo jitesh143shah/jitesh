@@ -9,13 +9,18 @@ const fs = require("fs");
 //sync
 // fs.writeFileSync("data.txt", "hello this is data")
 
-
-//read file
+// -------------------- read file ------------------------------
 
 // let data = fs.readFileSync("abc.txt",{encoding:"utf-8"});
 // console.log(data);
-// file data append
-fs.appendFile("abc.txt", "\n i am jitesh", (err) => {
-    if (err) throw err;
-    console.log("done")
-})
+
+// -------------------- file data append or update ------------------------------
+
+// fs.appendFile("abc.txt", "\n i am jitesh", (err) => {
+//     if (err) throw err;
+//     console.log("done")
+// })
+// -------------------- file data delete form file ------------------------------
+fs.unlink(__dirname + "/data.txt", (e) =>
+    console.log(e ? "Not Found" : "Deleted"))
+
