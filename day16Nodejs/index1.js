@@ -30,8 +30,8 @@
 // let result = add(4, 5);
 // console.log(result)
 // ------------------------------------------------------------------------------------
-const { add, multiply } = require("./3-calFun")
-let result = add(4, 5)
-console.log(result)
-let result1 = multiply(4, 5)
-console.log(result1)
+// const { add, multiply } = require("./3-calFun")
+// let result = add(4, 5)
+// console.log(result)
+// let result1 = multiply(4, 5)
+// console.log(result1)
