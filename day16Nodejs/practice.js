@@ -39,7 +39,7 @@ const fs = require("fs");
 //     console.log("done"||err)
 
 // })
-const a = require("fs")
+// const a = require("fs")
 // let data = a.readFile("abcd.txt", { encoding: "utf-8" }, (err, result) => {
 //     if (err) throw err
 //     console.log(result)
@@ -60,6 +60,6 @@ const a = require("fs")
 //     if (e) throw e
 //     console.log("done")
 // })
-fs.unlink(__dirname + "/abc.txt", (e) => {
-    console.log(e ? "Not found": "delete")
-})
+// fs.unlink(__dirname + "/abc.txt", (e) => {
+//     console.log(e ? "Not found": "delete")
+// })
