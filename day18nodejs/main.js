@@ -17,8 +17,35 @@ async function connectDB() {
     }
 
 }
+const userSchema = new mongoose.Schema({
+    name: String,
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    pasword: String,
+});
+
+const User = mongoose.model("user", userSchema);
+async function createUsers() {
+    try {
+        let newUser = await User.create({
+            name: "CLouds",
+            email: "email@gmail.com",
+            pasword: "clouds",
+        })
+
+    } catch (error) {
+        console.log(error.code);
+        // 11000 if it shows duplicate data
+
+    }
+}
+
 
 app.listen(5000, () => {
     console.log("server started")
     connectDB();
+    createUsers();
 });
