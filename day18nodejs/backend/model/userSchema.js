@@ -6,7 +6,15 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
-    pasword: String,
-});
+    password: String,
+    blogs: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Blog",
+        required: true,
+    }]
+}, {
+    timestamps: true,
+},
+);
 const User = mongoose.model("user", userSchema);
 module.exports = User;

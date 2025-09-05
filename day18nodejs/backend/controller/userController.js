@@ -138,5 +138,24 @@ async function deleteUser(req, res) {
 
     }
 };
+async function deleteAllUser(req, res) {
+    try {
+        const { id } = req.params;
+        const deleteAllUser = await User.deleteMany({});
 
-module.exports = { createUsers, getUser, getUserId, updateUser, deleteUser };
+        return res.status(200).json({
+            success: true,
+            message: "All User deleted Successfully",
+            deletedCount: deleteAllUser.deletedCount,
+        })
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: "Please try again",
+        })
+
+    }
+};
+
+module.exports = { createUsers, getUser, getUserId, updateUser, deleteUser, deleteAllUser };

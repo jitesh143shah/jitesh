@@ -9,10 +9,11 @@ dotenv.config();
 // cors error . it is used to linked between fronend and backend
 const cors = require("cors");
 const connectDB = require("./config/dbConnect");
+const userRouter = require("./routes/userRouter");
+const blogRouter = require("./routes/blogRouter");
+
+
 app.use(cors());
-
-
-
 
 
 // async function createUsers() {try {
@@ -32,6 +33,19 @@ app.use(express.json());
 // app.get("/:id", async (req, res) => {})
 // app.delete("/:id", async (req, res) => {})
 // app.patch("/:id", async (req, res) => {})
+
+
+app.get("/", (req, res) => {
+    return res.status(200).json({
+        message: "Connect Successfully",
+    })
+})
+
+//api version
+app.use("/api/v1/users", userRouter);
+app.use("/api/v1/blog", blogRouter);
+
+
 
 app.listen(5000, () => {
     console.log("server started")
